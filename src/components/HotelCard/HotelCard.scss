@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+
+.card-wrapper {
+  width: 350px;
+  height: 297px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    .inner-container {
+      transform: translateY(-297px);
+    }
+  }
+
+  .inner-container {
+    height: 350px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    img {
+      width: 100%;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+
+      .price {
+        border-left: 2px solid $--secondaryTextColor;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        background-color: rgba(90, 186, 198, 0.05);
+        padding: 10px;
+        text-align: center;
+
+        span {
+          color: $--primaryColor;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        span:last-child {
+          color: $--secondaryTextColor;
+          font-size: 11px;
+          font-weight: normal;
+        }
+      }
+
+      .name {
+        padding: 10px;
+        color: $--textColor;
+        font-weight: bolder;
+        font-size: 14px;
+      }
+    }
+
+    .book-btn {
+      background-color: #75c5cf;
+      display: block;
+      border-color: #35929e;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
