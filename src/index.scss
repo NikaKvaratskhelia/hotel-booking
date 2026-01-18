@@ -1,0 +1,18 @@
+@import "./styles/variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: openSans;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: openSans;
+  src: url(./assets/fonts/static/OpenSans-Regular.ttf);
+}

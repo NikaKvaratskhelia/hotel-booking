@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: $--bgDark;
+  padding: 30px 0px 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #fff;
+
+  p {
+    grid-column: 2/5;
+  }
+}

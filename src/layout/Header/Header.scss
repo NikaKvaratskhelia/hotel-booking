@@ -1,0 +1,123 @@
+@import "../../styles/variables";
+
+header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+
+  .logo-container {
+    width: max(20%, 150px);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    padding: 0px 60px 0px 0px;
+    border-right: 1px solid #a3a3a3;
+
+    @media screen and (max-width: 768px) {
+      padding: 0px 20px 0px 0px;
+    }
+    svg {
+      width: 38px;
+      height: 44px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    img {
+      display: none;
+      width: 100px;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    padding: 0px 0px 0px 60px;
+    transition: all 0.5s ease;
+
+    &.active {
+      right: 0px;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+
+      a {
+        color: $--textColor;
+        font-weight: bold;
+      }
+
+      a.active {
+        color: $--primaryColor;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      background-color: #fff;
+      position: fixed;
+      height: 100%;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      bottom: 0;
+
+      ul {
+        margin-top: 100px;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .burger-menu {
+    overflow: visible;
+    margin-right: 20px;
+    margin-left: auto;
+    position: relative;
+    width: 25px;
+    height: 24px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 1s;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $--primaryColor;
+      border-radius: 2px;
+      transition: all 1s;
+      transform-origin: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg);
+          position: absolute;
+        }
+
+        span:nth-child(2) {
+          transform: scale(0, 1);
+        }
+
+        span:nth-child(3) {
+          transform: rotate(-45deg);
+          position: absolute;
+        }
+      }
+    }
+  }
+}
