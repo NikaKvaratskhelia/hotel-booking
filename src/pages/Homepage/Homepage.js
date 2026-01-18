@@ -1,7 +1,7 @@
 import "./Homepage.scss";
 import Loader from "../../components/loader/Loader";
 import { useEffect, useState } from "react";
-import { fetchfavRooms } from "../../services/roomsServices";
+import { fetchRooms } from "../../services/roomsServices";
 import { Link } from "react-router-dom";
 import HotelCard from "../../components/HotelCard/HotelCard";
 
@@ -13,7 +13,7 @@ export default function Homepage() {
     const loadRooms = async () => {
       setLoading(true);
       try {
-        const rooms = await fetchfavRooms();
+        const rooms = await fetchRooms();
         const sortedRooms = [...rooms]
           .sort((a, b) => b.bookedDates.length - a.bookedDates.length)
           .slice(0, 6);
