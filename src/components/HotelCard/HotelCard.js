@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./HotelCard.scss";
 
 export default function HotelCard(props) {
-  console.log(props);
 
   return (
     <div className="card-wrapper">
